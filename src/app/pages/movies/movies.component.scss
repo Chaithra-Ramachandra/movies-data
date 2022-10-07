@@ -1,0 +1,31 @@
+@import "../../../styles/colors";
+
+.pagination {
+  display: flex;
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+  background-color: hsl(0, 0%, 96%);
+  border-radius: 20px;
+  margin: 20px 30px;
+}
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.pagination a.active {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.poster {
+  max-width: 100%;
+}
+
+.overview {
+  line-height: 1.5;
+}

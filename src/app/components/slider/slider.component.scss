@@ -1,0 +1,97 @@
+@import "../../../styles/colors";
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 35rem;
+  position: relative;
+
+  .slide {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    height: 35rem;
+    &-bg {
+      position: relative;
+      display: flex;
+      flex: 1 1 auto; //the image will be pushed to the most right in the banner
+      &:after {
+        //&:after is like creating a hidden div
+        position: absolute; // positiom here is relative to the background
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        content: " ";
+
+        //https://cssgradient.io/ website to create our gradient
+        background-image: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 0, 0, 1) 30%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        // background-image: linear-gradient(
+        //   to right,
+        //   #000 0,
+        //   transparent 75%,
+        //   transparent 100%
+        // );
+      }
+
+      &-image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; // Fit on the parent
+      }
+    }
+
+    &-pane {
+      position: absolute; // position:absolute because we want to place the text on the image and not on the side of the image
+      width: 45%;
+      top: 5rem;
+      left: 5rem;
+    }
+
+    .name {
+      font-size: 2.8rem;
+    }
+
+    .meta {
+      font-size: 1.4rem;
+      color: $lightGray;
+
+      .info {
+        display: flex;
+        //> span means only for top level span
+        > span {
+          &:not(:last-child):after {
+            content: "|";
+            margin-right: 9px;
+            margin-left: 9px;
+          }
+        }
+
+        .rating {
+          display: flex;
+          align-items: center;
+          .app-icon {
+            color: #d4af37;
+            margin-right: 5px;
+          }
+
+          &-value {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .desc {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+  }
+}

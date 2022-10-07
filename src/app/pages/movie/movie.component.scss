@@ -1,0 +1,43 @@
+@import "../../../styles/colors";
+
+/*This is to overwrite the primefles css style and place the tab in the center if we are changing the top-level css(primeflex css) then we have to write it like in the component css and change in the global stylesheet */
+:host ::ng-deep {
+  .p-tabview-nav {
+    justify-content: center;
+    li {
+      .p-tabview-nav-link {
+        background: $bgColor;
+      }
+
+      &.p-highlight .p-tabview-nav-link {
+        background: $bgColor;
+      }
+    }
+  }
+}
+
+.stat {
+  display: flex;
+  margin-bottom: 15px;
+
+  .label {
+    width: 150px;
+    font-weight: bold;
+  }
+
+  .value {
+    color: $primaryColor;
+  }
+}
+
+.actor {
+  padding: 10px;
+  img {
+    width: 100%;
+  }
+  span {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+  }
+}
