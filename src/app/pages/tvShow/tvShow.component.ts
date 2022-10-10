@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Item } from 'src/app/components/item/item';
 import {
@@ -12,11 +12,11 @@ import { TvShowsService } from 'src/app/services/tvshows.service';
 import { IMAGE_SIZES } from '../../constants/images-sizes';
 
 @Component({
-  selector: 'app-tvshow',
-  templateUrl: './tvshow.component.html',
-  styleUrls: ['./tvshow.component.scss'],
+  selector: 'app-tvShow',
+  templateUrl: './tvShow.component.html',
+  styleUrls: ['./tvShow.component.scss'],
 })
-export class TvShowComponent implements OnInit {
+export class TvShowComponent implements OnInit, OnDestroy {
   tvShow: TvShow | null = null;
   tvShowBanner: Item | null = null;
   tvShowVideos: TvShowVideo[] = [];
