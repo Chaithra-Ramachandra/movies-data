@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,7 +21,7 @@ import { ImageModule } from 'primeng/image';
 import { GenresComponent } from './pages/genres/genres.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { TvShowsComponent } from './pages/tv-shows/tv-shows.component';
-import { TvShowComponent } from './pages/tvShow/tvshow.component';
+import { TvShowComponent } from './pages/tvShow/tvShow.component';
 import { TvItemComponent } from './components/tv-item/tv-item.component';
 
 @NgModule({
@@ -52,6 +52,7 @@ import { TvItemComponent } from './components/tv-item/tv-item.component';
     CarouselModule,
     InputTextModule,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent],
 })
